@@ -1,0 +1,14 @@
+{% extends 'blogs/_base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+
+	{% for a in books %}
+	<p>{{a.title}}</p>
+	<img src = "{{a.cover.url}}">
+	{% endfor %}
+
+{% endblock content %}
+
+
