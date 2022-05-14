@@ -1,0 +1,14 @@
+{% extends 'blogs/_base.html' %}
+
+{% block title %}{% endblock title %}
+
+{% block content %}
+
+
+	<a href="{% url 'books_list'%}">вернуться к списку книг</a>
+	<img src = "{{book.cover.url}}" >
+	<h2>{{book.title}}</h2>
+	<p>{{book.description}}</p>
+
+
+{% endblock content %}

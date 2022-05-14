@@ -3,12 +3,25 @@
 {% block title %}{% endblock title %}
 
 {% block content %}
+<div class="row mt-4">
+	<h3 class="text-center">Магазин книг</h3>
+	{% for b in books %}
+		
+		<div class="col-md-3">
+			<div class="card">
+				<img src = "{{b.cover.url}}">
+	            <div class="card-body">
+			    	<h5 class="card-title">Card title</h5>
+			    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					<a href="{% url 'books_detail' b.id %}">{{b.title}}</a>
+			  </div>
+			</div>
+	
+		</div>
 
-	{% for a in books %}
-	<p>{{a.title}}</p>
-	<img src = "{{a.cover.url}}">
 	{% endfor %}
-
+</div>
+	
 {% endblock content %}
 
 
