@@ -1,5 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Student 
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Student, Teacher
+from .forms import StudentForm, TeacherForm
+
+
 
 def student_list(request):
 	students = Student.objects.all()
@@ -24,5 +27,29 @@ def student_detail(request, student_id):
 		'student':student
 	}
 	return render(request, 'students/student_detail.html', context)
+
+
+def student_create(request):
+	form = StudentForm(request.POST or None)
+	if request.method == 'POST':
+		if form.is_valid:
+			form.save()
+			return redirect(student_list)
+
+	context = {'form': form}
+	return render(request, 'students/student_create.html', context)
+
+
+
+
+def teacher_create(request):
+	form = TeacherForm(request.POST or None)
+	if request.method == 'POST':
+		if form.is_valid:
+			form.save()
+			return redirect(student_list)
+
+	context = {'form': form}
+	return render(request, 'students/teacher_create.html', context)
 
 

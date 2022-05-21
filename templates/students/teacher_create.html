@@ -1,0 +1,17 @@
+
+{% extends '_base.html' %}
+
+{% block content %}
+
+	<form action="" method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button
+			type="sumbit"
+			class="btn btn-success">
+			Создать
+		</button>
+	</form>	
+
+{% endblock content %}
+		
