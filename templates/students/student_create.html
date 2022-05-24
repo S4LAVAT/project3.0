@@ -2,16 +2,17 @@
 
 {% block content %}
 
-	<form action="" method="POST">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<button
-			type="sumbit"
-			class="btn btn-success">
-			Создать
-		</button>
-	</form>	
-
+	<div class="mt-4">
+		<form action="" method="POST">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button
+				type="sumbit"
+				class="btn btn-success">
+				Создать
+			</button>
+		</form>
+	</div>
 {% endblock content %}
 		
 
