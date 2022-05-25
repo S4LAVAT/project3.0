@@ -1,0 +1,17 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+	<h3>
+		Вы действительно хотите удалить {{student.name}}
+	</h3>
+	<form action="" method='POST'enctupe="multipart/form-data">
+		{% csrf_token %}
+		<button type="sumbit" class="btn btn_primary">Да я уверен</button>
+		<a class="btn btn_primary" href="{% url 'student_list' %}">Нет</a>
+	</form>
+
+
+
+
+{% endblock content %}

@@ -2,11 +2,18 @@
 {% extends '_base.html' %}
 
 {% block content %}
-	<h3>
-		редактировать
-	</h3>
 
-
+	<div class="mt-4">
+		<form action="" method="POST">
+			{% csrf_token %}
+			{{ form.as_p }}
+			<button
+				type="sumbit"
+				class="btn btn-success">
+				Редактировать
+			</button>
+		</form>
+	</div>
 
 
 

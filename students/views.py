@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Student, Teacher
-from .forms import StudentForm, TeacherForm
+from .forms import StudentForm, TeacherForm 
 
 
 
@@ -77,7 +77,21 @@ def student_update(request, student_id):
 			return redirect(student_list)
 
 	context = {'form': form}
-	return render(request, 'students/student_create.html', context)
+	return render(request, 'students/student_update.html', context)
+
+
+
+
+def student_delete(request, student_id):
+	student = get_object_or_404(Student,id=student_id)
+	if request.method == 'POST':
+		student.delete()
+		return redirect('student_list')
+	context = {
+		'student':student
+	}
+	return render(request, 'students/student_delete.html', context)
+
 
 
 
