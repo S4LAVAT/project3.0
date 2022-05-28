@@ -95,3 +95,34 @@ def student_delete(request, student_id):
 
 
 
+def teacher_filter(request):
+	teacher = Teacher.object.get(name)
+	student = Student.object.filter(teacher = teacher)
+	return 
+
+
+
+def teacher_filter(request, student_id):
+	teacher = Teacher.object.get(id = teacher.id)
+	student = Student.object.filter(teacher = teacher)
+	if request.method == 'POST':
+		if form.is_valid:
+			form.save()
+			return redirect(student_list)
+
+	context = {'form': form}
+	return render(request, 'students/teacher_filter.html', context)
+
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
