@@ -23,8 +23,7 @@ class Student(models.Model):
 	average_mark = models.DecimalField(decimal_places=1, max_digits=2)
 	photo = models.ImageField(upload_to='cover', null=True, blank=True) 
 	school = models.CharField(max_length=300)
-	teacher = models.ForeignKey(Teacher, 
-		on_delete=models.CASCADE, null=True)
+	teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, null=True)
 
 
 	def __str__(self):

@@ -40,8 +40,10 @@
 	      <th scope="col">#</th>
 	      <th scope="col">Имя</th>
 	      <th scope="col">Фамилия</th>
+	      <th scope="col">Дата рождения</th>
+	      <th scope="col">Средняя успиваемость</th>
 	      <th scope="col">Школа</th>
-	      <th scope="col">Класс</th>
+	      <th scope="col">Касс</th>
 	      <th scope="col">Учитель</th>
 	    </tr>
 	  </thead>
@@ -55,9 +57,13 @@
 	      	</a>	
 	  	  </td>
 	      <td>{{s.surname}}</td>
+	      <td>{{s.birth_date}}</td>
+	      <td>{{s.average_mark}}</td>      
 	      <td>{{s.school}}</td>
 	      <td>{{s.grade}}</td>
 	      <td>{{s.teacher.name}}</td>
+	      <td>{{s.photo}}</td>
+
 	    </tr>
 	{% empty %}
 	    <tr>

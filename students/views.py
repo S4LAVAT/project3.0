@@ -42,7 +42,7 @@ def student_detail(request, student_id):
 
 
 def student_create(request):
-	form = StudentForm(request.POST or None)
+	form = StudentForm(request.POST or None, files=request.FILES)
 	if request.method == 'POST':
 		if form.is_valid:
 			form.save()

@@ -1,12 +1,14 @@
-
 {% extends '_base.html' %}
+{% load widget_tweaks %}
 
 {% block content %}
 
-	<div class="col-8 mt-4">
+	<div class="col-5 mt-4">
 		<form action="" method="POST">
 			{% csrf_token %}
-			{{ form.as_p }}
+			
+			<label>Введите имя</label>
+			{% render_field form.name class="form-control" %}
 			<button
 				type="sumbit"
 				class="btn btn-success">

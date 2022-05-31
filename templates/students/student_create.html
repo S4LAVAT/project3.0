@@ -1,14 +1,55 @@
 {% extends '_base.html' %}
+{% load widget_tweaks %}
+
 
 {% block content %}
 
-	<div class="mt-4">
+	<div class="col-4 mt-4 ">
+		<h1>ВНЕСТИ УЧЕНИКА</h1>
+		{% if form.errors %}
+			{% for field in form %}
+				{% for err in field.errors %}
+				<div class="alert alert-danger" role="alert">
+					{{err|escape}}
+				</div>
+				{% endfor %}
+			{% endfor %}
+		{% endif %}
+
 		<form action="" method="POST">
 			{% csrf_token %}
-			{{ form.as_p }}
+			<label>Имя</label>
+			{% render_field form.name placeholder='Имя' class="form-control" %}
+			
+
+			<label>Фамилия</label>
+			{% render_field form.surname  placeholder='Фамилия' class="form-control" %}
+			
+			<label>Класс</label>
+			{% render_field form.grade placeholder='Класс' class="form-control" %}
+			
+
+			<label>Школа</label>
+			{% render_field form.school placeholder='Школа' class="form-control" %}
+			
+			<label>Дата рождения</label>
+			{% render_field form.birth_date placeholder='Дата рождения' class="form-control" %}
+			
+
+			<label>Средняя оценка</label>
+			{% render_field form.average_mark placeholder='Средняя оценка' class="form-control" %}
+
+			<label>Средняя оценка</label>
+			{% render_field form.teacher placeholder='Средняя оценка' class="form-control" %}
+
+			<label>Средняя оценка</label>
+			{% render_field form.photo placeholder='Средняя оценка' class="form-control" %}
+			
+			
+
 			<button
 				type="sumbit"
-				class="btn btn-success">
+				class=" col-4 mt-4 btn btn-success">
 				Создать
 			</button>
 		</form>
